@@ -66,3 +66,7 @@ def double_eights(n):
         return(True)
     else:
         return(False)
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
