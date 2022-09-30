@@ -31,7 +31,39 @@ def product(n, term):
     >>> product(3, triple)    # 1*3 * 2*3 * 3*3
     162
     """
-    "*** YOUR CODE HERE ***"
+    # One Correct Solution
+    
+    
+    # total = None
+    # for i in range(1,n+1):
+    #     if term == identity:
+    #         if i == 1:
+    #             total = identity(i)
+    #         else:
+    #             total = total*identity(i)
+    #     elif term == square:
+    #         if i == 1:
+    #             total = square(i)
+    #         else:
+    #             total = total*square(i)
+    #     elif term == triple:
+    #         if i == 1:
+    #             total = triple(i)
+    #         else:
+    #             total = total*triple(i)
+    #     else:
+    #         if i == 1:
+    #             total = increment(i)
+    #         else:
+    #             total = total*increment(i)
+    # return(total)
+    
+    total, k = 1, 1 
+    while k<=n:
+        total,k = total*term(k),k+1
+    return total
+
+        
 
 
 def accumulate(merger, start, n, term):
@@ -58,7 +90,41 @@ def accumulate(merger, start, n, term):
     >>> accumulate(lambda x, y: (x + y) % 17, 19, 20, square)
     16
     """
-    "*** YOUR CODE HERE ***"
+    #"*** YOUR CODE HERE ***"
+    # One Correct Solution 
+    
+    # total = start
+    # for i in range(1,n+1):
+    #     if merger == add:
+    #         if term == identity:
+    #             total += identity(i)
+    #         elif term == square:
+    #             total += square(i)
+    #         elif term == triple:
+    #             total += triple(i)
+    #         elif term == increment:
+    #             total += increment(i)
+    #     elif merger == mul:
+    #         if term == identity:
+    #             total *= identity(i)
+    #         elif term == square:
+    #             total *= square(i)
+    #         elif term == triple:
+    #             total *= triple(i)
+    #         elif term == increment:
+    #             total *= increment(i)
+    # return total
+    
+    total,k = start,1
+    while k<=n:
+        total = merger(total,term(k))
+        # if merger == add:
+        #     total += term(k)
+        # elif merger== mul:
+        #     total *= term(k)
+        k = k+1
+    return total
+    
 
 
 def summation_using_accumulate(n, term):
@@ -75,7 +141,8 @@ def summation_using_accumulate(n, term):
     >>> [type(x).__name__ for x in ast.parse(inspect.getsource(summation_using_accumulate)).body[0].body]
     ['Expr', 'Return']
     """
-    "*** YOUR CODE HERE ***"
+    #"*** YOUR CODE HERE ***"
+    return(accumulate(add,0,n,term))
 
 
 def product_using_accumulate(n, term):
@@ -92,4 +159,5 @@ def product_using_accumulate(n, term):
     >>> [type(x).__name__ for x in ast.parse(inspect.getsource(product_using_accumulate)).body[0].body]
     ['Expr', 'Return']
     """
-    "*** YOUR CODE HERE ***"
+    #"*** YOUR CODE HERE ***"
+    return(accumulate(mul,1,n,term))
