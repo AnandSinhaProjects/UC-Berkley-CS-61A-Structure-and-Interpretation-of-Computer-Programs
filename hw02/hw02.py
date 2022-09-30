@@ -118,6 +118,8 @@ def accumulate(merger, start, n, term):
     total,k = start,1
     while k<=n:
         total = merger(total,term(k))
+        #Another Solution
+        
         # if merger == add:
         #     total += term(k)
         # elif merger== mul:
