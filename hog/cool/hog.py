@@ -1,19 +1,21 @@
 # Imports Start here ->
 from random import randint
+from math import sqrt
+from sys import flags
 # Imports End here -----------------------------------------------
 
 # Boilerplate Code like the defaults and everthing is here.
 
 six_sided = 6
 four_sided = 4
-score_main = 0
-score_opp = 0
-turn_number = 0
+score_main = 0 # Player 1 Score
+score_opp = 0 # Player 2 Score
+turn_number = 0 # Total number of turns taken in the game.
 pig_tail = lambda x: 2 * abs(int(str(x)[0]) - int(str(x)[1])) + 1 #Function followed for pig_tail -> 2 * abs(tens - ones) + 1 points
-faces = int(input('Enter the number of faces -> '))
-num_rolls = int(input('Number of rolls to play -> '))
-total_score = int(input('Total score to play -> '))
-outcomes = input('Either enter the list of outcomes or "random" -> ')
+# faces = int(input('Enter the number of faces -> '))
+# num_rolls = int(input('Number of rolls to play -> '))
+# total_score = int(input('Total score to play -> '))
+# outcomes = input('Either enter the list of outcomes or "random" -> ')
 
 #----------------------------------------------------------------   
 
@@ -44,7 +46,7 @@ def start_game(num_rolls:int=0, total_score:int=100, faces:int=six_sided,  outco
         outcomes = list(map(int, outcomes.split()))
     return outcomes
 
-outcomes = start_game(num_rolls, total_score, faces, outcomes)
+#outcomes = start_game(num_rolls, total_score, faces, outcomes)
 
 # This function checks if the value i is 1 or not.
 
@@ -76,3 +78,29 @@ def take_turn(outcomes):
             else:
                 points_round += i
         return points_round
+
+# This function calculates if the number is a square root.
+
+def perfect_square(score):
+    ips = int(sqrt(score))
+    if (ips*ips) == score:
+        return True,ips
+    else:
+        return False,0
+
+# This function calculates the next perfect_square(score)
+
+def next_perfect_square(n):
+    return (n+1)*(n+1)
+
+# This function calculates the new score depeding on the fact that
+# the score is a perfect sqaure or not.
+
+def square_update(score):
+    flag,ips = perfect_square(score)
+    if flag == False:
+        return score
+    if flag == True:
+        return next_perfect_square(ips)
+
+
