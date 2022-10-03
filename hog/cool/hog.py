@@ -8,35 +8,43 @@ six_sided = 6
 four_sided = 4
 score_main = 0
 score_opp = 0
-pig_tail = lambda x: 2 * abs(int(str(x)[0]) - int(str(x)[1])) + 1
+turn_number = 0
+pig_tail = lambda x: 2 * abs(int(str(x)[0]) - int(str(x)[1])) + 1 #Function followed for pig_tail -> 2 * abs(tens - ones) + 1 points
+faces = int(input('Enter the number of faces -> '))
+num_rolls = int(input('Number of rolls to play -> '))
+total_score = int(input('Total score to play -> '))
+outcomes = input('Either enter the list of outcomes or "random" -> ')
+
 #----------------------------------------------------------------   
 
-# This function is used to start the game in both test and benchmark mode.
-print('Follow format def start_game(num_rolls, faces, total_score, outcomes)')
-def start_game(num_rolls:int=0, total_score:int=100, faces:int=six_sided,  outcomes:str=''):
-    # faces = int(input('Enter the number of faces'))
-    # num_rolls = int(input('Number of rolls to play'))
-    # outcomes = input()
-    if outcomes == 'random':
-        outcomes = dice_roll(num_rolls,faces)
-    else:
-        outcomes = list(map(int, outcomes.split()))
-    return outcomes
-  
 #This function tries to mimic the behavior of of a dice roll with n faces.
 
-def dice(faces):
+def dice(faces:int=six_sided):
     assert type(faces)==int and faces>=1, 'Illegal side value for dice'
     return randint(1,faces)
 
 # This functions is used to get the Dice rolls meaning this give 
 # the list for total num_rolls say num_rolls = 1 then l will be maybe [4].
 
-def dice_roll(num_rolls,faces=six_sided):
+def dice_roll(num_rolls:int=3,faces:int=six_sided):
     outcomes = []
     for i in range(num_rolls):
         outcomes.append(dice(faces))
     return outcomes
+
+# This function is used to start the game in both test and benchmark mode.
+#print('Follow format def start_game(num_rolls, faces, total_score, outcomes)')
+def start_game(num_rolls:int=0, total_score:int=100, faces:int=six_sided,  outcomes:str=''):
+    # faces = int(input('Enter the number of faces -> '))
+    # num_rolls = int(input('Number of rolls to play -> '))
+    # outcomes = input('Either enter the list of outcomes or "random" -> ')
+    if outcomes == 'random':
+        outcomes = dice_roll(num_rolls,faces)
+    else:
+        outcomes = list(map(int, outcomes.split()))
+    return outcomes
+
+outcomes = start_game(num_rolls, total_score, faces, outcomes)
 
 # This function checks if the value i is 1 or not.
 
