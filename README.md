@@ -35,3 +35,5 @@ Added Recurtion Folder and few files - Fri Oct  7 21:09:11 IST 2022
 Added few more practice files - Fri Oct  7 22:58:55 IST 2022
 
 Small Edit- Fri Oct  7 23:01:36 IST 2022
+
+All Disc02 Files and some leetcode questions Added - Sat Oct  8 00:30:50 IST 2022
