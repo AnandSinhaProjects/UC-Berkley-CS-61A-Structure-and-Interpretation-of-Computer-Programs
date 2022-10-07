@@ -13,7 +13,6 @@ The Luhn sum of a valid credit card number is a multiple of 10.
 '''
 
 # Non Recursive Approach
-from re import M
 
 
 def luhn(n):
@@ -45,6 +44,8 @@ def luhn_sum_double(n):
     else:
         return luhnr(all_but_last) + luhn_digit
 
+# As we can see that the luhnr calls luhn_sum_double and luhn_sum_double 
+# calls luhnr this is called a Mutual Recursion
 # def luhn(n):
 #     while n!=0:
 #         n= n//10
