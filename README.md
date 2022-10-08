@@ -41,3 +41,5 @@ All Disc02 Files and some leetcode questions Added - Sat Oct  8 00:30:50 IST 202
 Small Edits - Sat Oct  8 00:32:25 IST 2022
 
 Leetcode Questions on Recurrsion Added - Sat Oct  8 20:29:08 IST 2022
+
+New Question Added - Sun Oct  9 00:13:52 IST 2022
