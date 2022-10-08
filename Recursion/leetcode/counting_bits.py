@@ -67,9 +67,10 @@ def count_digits(n):
     
 # Second Solution
 
-# def countBits(n):
-#     res = []
-#     binary = ''
-
-# def helper2(n,i=0):
-    
+def countBits(n):
+    res = []
+    binary = ''
+    for i in range(0,n+1):
+        binary = str(bin(i).count('1'))
+        res.append(binary)
+    return res
