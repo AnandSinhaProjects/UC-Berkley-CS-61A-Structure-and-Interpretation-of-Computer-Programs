@@ -45,3 +45,6 @@ Leetcode Questions on Recurrsion Added - Sat Oct  8 20:29:08 IST 2022
 New Question Added - Sun Oct  9 00:13:52 IST 2022
 
 DP folder added for Learning Dynamic Programming - Mon Oct 10 20:17:41 IST 2022
+
+Small Test Codes Added - Mon Oct 10 22:25:36 IST 2022
+
