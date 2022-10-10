@@ -28,6 +28,9 @@ F(n) = F(n-1) + F(n-2)
 The answer is in f(n).
 '''
 
+# Time Complexity = O(N)
+# Space Complexity = O(N)
+
 def climbstairs(n):
     dp = [None] * (n+1)
     dp[0] = 1
@@ -35,3 +38,19 @@ def climbstairs(n):
     for i in range(2,n+1):
         dp[i] = dp[i-1] + dp[i-2]
     return dp[n]
+
+########### 
+
+# Let's optimize the function for better Space Complexity
+
+# New Space Complexity - O(1)
+
+def climbstairso(n):
+    a = 1
+    b = 1
+    c = None
+    for i in range(2,n+1):
+        c = a + b
+        a = b
+        b = c
+    return c
