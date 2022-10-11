@@ -37,6 +37,7 @@
 #                 count += l[start]
 #         return count
 
+
 def mis_cost(l):
     if not l:
         return 0
@@ -50,3 +51,4 @@ def mis_cost(l):
         dp[i]=l[i]+min(dp[i-1],dp[i-2])
         
     return min(dp[-1],dp[-2])
+
