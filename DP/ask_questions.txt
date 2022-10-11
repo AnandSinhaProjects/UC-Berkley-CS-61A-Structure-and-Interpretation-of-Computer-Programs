@@ -1,0 +1,14 @@
+Framework for Solving DP Problems:
+
+1. Define the objective function
+-- Lets define the scope of the problem and work with that ->
+
+2. Idenitfy base cases
+The base cases are ->
+
+3. Write down a recurrence relation for the optimized objective function
+
+4. What's the order of execution?
+
+5. Where to look for the answer?
+
