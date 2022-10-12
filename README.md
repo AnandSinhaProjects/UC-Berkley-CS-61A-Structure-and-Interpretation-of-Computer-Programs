@@ -51,3 +51,5 @@ Small Test Codes Added - Mon Oct 10 22:25:36 IST 2022
 Added the generalized solution of k steps problem and its optimzation - Tue Oct 11 09:28:09 IST 2022
 
 New Type of Staircase Problem Added -  Tue Oct 11 09:48:24 IST 2022
+
+New Changes Added - Wed Oct 12 22:45:06 IST 2022
