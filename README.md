@@ -55,3 +55,5 @@ New Type of Staircase Problem Added -  Tue Oct 11 09:48:24 IST 2022
 New Changes Added - Wed Oct 12 22:45:06 IST 2022
 
 New Leetcode Answers Added - Thu Oct 13 16:12:42 IST 2022
+
+New Leetcode Answer Added - Fri Oct 14 20:31:12 IST 2022
