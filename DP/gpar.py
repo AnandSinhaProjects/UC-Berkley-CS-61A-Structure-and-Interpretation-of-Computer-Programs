@@ -1,3 +1,5 @@
+# Not Solved yet leetcode hard.
+
 from itertools import combinations
 def generate(n):
     l=list(combinations("()",n))
